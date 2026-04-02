@@ -3,59 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gemini Coffee — Freshly Roasted 1 kg Coffee Beans</title>
-  <meta name="description" content="Gemini Coffee offers freshly roasted 1 kg coffee beans, espresso blends, single-origin coffee, and Fair Trade sourcing for retail and business clients." />
+  <title>Gemini Coffee — Premium Roasted Coffee Store</title>
+  <meta name="description" content="Premium Gemini coffee store with animated hero, catalog, wishlist, cart, checkout UI, and refined e-commerce design." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Gemini Coffee home">
-        <span class="brand-mark">G</span>
-        <span class="brand-text">
-          <strong>GEMINI COFFEE</strong>
-          <small>Freshly Roasted Since 1996</small>
+  <div class="noise"></div>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top">
+        <span class="brand__mark">G</span>
+        <span class="brand__text">
+          <strong>Gemini Coffee</strong>
+          <small>Premium roasted coffee since 1996</small>
         </span>
       </a>
 
-      <nav class="main-nav" id="mainNav">
-        <a href="#collection">Collection</a>
-        <a href="#story">About</a>
-        <a href="#advantages">Why Gemini</a>
-        <a href="#business">B2B</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#story">Story</a>
+        <a href="#experience">Experience</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
       </nav>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header__actions">
+        <button class="round-btn" id="searchToggle" aria-label="Open search">⌕</button>
+        <button class="round-btn" id="wishlistToggle" aria-label="Open wishlist">♡ <span id="wishlistCount">0</span></button>
+        <button class="round-btn round-btn--accent" id="cartToggle" aria-label="Open cart">Cart <span id="cartCount">0</span></button>
+        <button class="round-btn mobile-only" id="menuToggle" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+
+    <div class="search-panel" id="searchPanel">
+      <div class="container">
+        <div class="search-panel__card">
+          <input id="searchInput" type="text" placeholder="Search coffee, roast profile, origin..." />
+          <button class="btn btn--ghost" id="clearSearch">Clear</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Fair Trade · Fresh Roast · 1 kg Coffee Beans</span>
-          <h1>Professional coffee for people who expect more from every cup.</h1>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <div class="eyebrow">Fair Trade sourcing • Retail & B2B coffee solutions</div>
+          <h1>Premium coffee, presented like a real brand.</h1>
           <p>
-            Gemini sources beans directly from farmers at a fair price, roasts them in-house,
-            tests every batch for balance and character, and creates blends designed for daily ritual,
-            café performance, and confident retail choice.
+            Gemini buys beans directly from farmers at a fair price, roasts them with precision, checks flavour and quality, and creates blends and single-origin coffees for retail buyers, offices, cafés, hotels, and modern hospitality spaces.
           </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#collection">Explore Collection</a>
-            <a class="btn btn-secondary" href="#story">Discover the Brand</a>
+          <div class="hero__buttons">
+            <a class="btn btn--primary" href="#shop">Shop collection</a>
+            <a class="btn btn--secondary" href="#story">About Gemini</a>
           </div>
 
-          <div class="hero-highlights">
+          <div class="hero__stats">
             <article>
-              <strong>78M+ kg</strong>
-              <span>coffee produced over 30 years of work</span>
+              <strong>78M+</strong>
+              <span>kg of coffee produced</span>
             </article>
             <article>
               <strong>15,000+</strong>
@@ -63,374 +75,337 @@
             </article>
             <article>
               <strong>700+</strong>
-              <span>retail locations across Ukraine</span>
+              <span>retail points across Ukraine</span>
             </article>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-glow hero-glow-one"></div>
-          <div class="hero-glow hero-glow-two"></div>
-          <div class="hero-badge hero-badge-top">Espresso Blends</div>
-          <div class="hero-badge hero-badge-bottom">Single Origin</div>
-          <div class="hero-showcase">
-            <img src="assets/extracrema.webp" alt="Gemini Extra Crema coffee beans" class="pack pack-main" />
-            <img src="assets/platinum.webp" alt="Gemini Platinum espresso blend" class="pack pack-left" />
-            <img src="assets/originale.webp" alt="Gemini Originale espresso blend" class="pack pack-right" />
+        <div class="hero__visual reveal">
+          <div class="hero-slider" id="heroSlider">
+            <div class="hero-slide active">
+              <img src="assets/hero-peru-kitchen.jpg" alt="Gemini Peru Organic on a kitchen table" />
+              <div class="hero-slide__caption">
+                <span>Morning ritual</span>
+                <strong>Peru Organic for warm, premium everyday coffee moments</strong>
+              </div>
+            </div>
+            <div class="hero-slide">
+              <img src="assets/extra-crema-premium.jpg" alt="Gemini Extra Crema premium photo" />
+              <div class="hero-slide__caption">
+                <span>Signature espresso</span>
+                <strong>Extra Crema built for body, crema, and café-style comfort</strong>
+              </div>
+            </div>
+            <div class="hero-slide">
+              <img src="assets/barista-platinum.jpg" alt="Gemini Platinum held by a barista" />
+              <div class="hero-slide__caption">
+                <span>Professional appeal</span>
+                <strong>Platinum for deeper espresso character and premium shelf impact</strong>
+              </div>
+            </div>
+            <div class="hero-slide">
+              <img src="assets/social-proof.jpg" alt="Gemini Peru Organic reflected in a mirror" />
+              <div class="hero-slide__caption">
+                <span>Social-ready brand</span>
+                <strong>Packaging and content that look strong in lifestyle media</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slider__controls">
+            <button id="heroPrev" class="round-btn">←</button>
+            <div id="heroDots" class="hero-dots"></div>
+            <button id="heroNext" class="round-btn">→</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div class="container trust-grid">
-        <div><span>Direct farmer sourcing</span></div>
-        <div><span>Roasted in Kyiv region</span></div>
-        <div><span>Retail + HoReCa solutions</span></div>
-        <div><span>Private Label available</span></div>
+    <section class="ticker">
+      <div class="ticker__track">
+        <span>Freshly roasted coffee</span>
+        <span>Fair Trade sourcing</span>
+        <span>Espresso blends & single origin</span>
+        <span>Retail, cafés, hotels, offices</span>
+        <span>Equipment, training, Private Label</span>
+        <span>Freshly roasted coffee</span>
+        <span>Fair Trade sourcing</span>
+        <span>Espresso blends & single origin</span>
+        <span>Retail, cafés, hotels, offices</span>
+        <span>Equipment, training, Private Label</span>
       </div>
     </section>
 
-    <section class="section" id="collection">
+    <section class="section section--shop" id="shop">
       <div class="container">
-        <div class="section-head split-head">
+        <div class="section__head reveal">
           <div>
-            <span class="eyebrow">Signature Selection</span>
-            <h2>1 kg coffee collection built for espresso, cafés, offices, and serious home brewing.</h2>
+            <div class="eyebrow">Storefront</div>
+            <h2>Shop 1 kg coffee collection</h2>
           </div>
           <p>
-            A curated Gemini lineup: bold espresso blends, smooth everyday options, and a vivid single-origin coffee.
-            Each pack is presented as a real product offer, with visual personality and a clear roasting identity.
+            Full frontend store behavior included: product filters, search, wishlist, cart, quantity controls, bundle add, local storage persistence, and checkout interface.
           </p>
         </div>
 
-        <div class="products-grid">
-          <article class="product-card accent-orange">
-            <div class="product-image"><img src="assets/extracrema.webp" alt="Gemini Extra Crema" /></div>
-            <div class="product-content">
-              <span class="product-type">Espresso Blend · 1 kg</span>
-              <h3>Extra Crema</h3>
-              <p>A fuller-bodied blend created for dense crema, rich aroma, and a classic espresso profile that feels premium and dependable.</p>
-              <ul>
-                <li>Velvety crema texture</li>
-                <li>Balanced for espresso machines</li>
-                <li>Strong retail shelf presence</li>
-              </ul>
-            </div>
-          </article>
+        <div class="toolbar reveal">
+          <div class="filters" id="filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="blend">Espresso blends</button>
+            <button class="filter" data-filter="single-origin">Single origin</button>
+            <button class="filter" data-filter="gift">Gift sets</button>
+          </div>
 
-          <article class="product-card accent-teal">
-            <div class="product-image"><img src="assets/miscela.webp" alt="Gemini Miscela" /></div>
-            <div class="product-content">
-              <span class="product-type">Espresso Blend · 1 kg</span>
-              <h3>Miscela</h3>
-              <p>A smooth, versatile blend for daily service, ideal when you need balance, repeatability, and crowd-pleasing flavor in every shot.</p>
-              <ul>
-                <li>Comfortable everyday profile</li>
-                <li>Designed for consistent extraction</li>
-                <li>Great for milk-based drinks</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="product-card accent-orange-light">
-            <div class="product-image"><img src="assets/intensive.webp" alt="Gemini Intensive" /></div>
-            <div class="product-content">
-              <span class="product-type">Espresso Blend · 1 kg</span>
-              <h3>Intensive</h3>
-              <p>For customers who prefer a stronger cup, Intensive delivers a more assertive roast expression and a confident aftertaste.</p>
-              <ul>
-                <li>Powerful espresso character</li>
-                <li>Bold aroma for high-volume service</li>
-                <li>Memorable brand statement</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="product-card accent-forest featured-card">
-            <div class="product-image"><img src="assets/peru-organic.webp" alt="Gemini Peru Organic" /></div>
-            <div class="product-content">
-              <span class="product-type">100% Arabica · Organic · 1 kg</span>
-              <h3>Peru Organic</h3>
-              <p>A vivid single-origin coffee with tasting notes of citrus, dark chocolate, and pear. Grown in Peru and positioned for customers looking for specialty-style discovery.</p>
-              <ul>
-                <li>Origin: Peru, Cajamarca</li>
-                <li>100% Arabica beans</li>
-                <li>Distinctive flavor-led storytelling</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="product-card accent-brown">
-            <div class="product-image"><img src="assets/medio.webp" alt="Gemini Medio" /></div>
-            <div class="product-content">
-              <span class="product-type">Espresso Blend · 1 kg</span>
-              <h3>Medio</h3>
-              <p>A rounded medium-style blend for buyers who want equilibrium between body, aroma, and smooth drinkability.</p>
-              <ul>
-                <li>Balanced medium expression</li>
-                <li>Suitable for broad customer taste</li>
-                <li>Reliable in office and retail use</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="product-card accent-black">
-            <div class="product-image"><img src="assets/platinum.webp" alt="Gemini Platinum" /></div>
-            <div class="product-content">
-              <span class="product-type">Espresso Blend · 1 kg</span>
-              <h3>Platinum</h3>
-              <p>A sharper, more premium-looking espresso blend made for modern presentation, strong café aesthetics, and dark roast appeal.</p>
-              <ul>
-                <li>Premium dark visual identity</li>
-                <li>Well-suited to serious espresso drinkers</li>
-                <li>Excellent hero product candidate</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="product-card accent-blue">
-            <div class="product-image"><img src="assets/tesoro.webp" alt="Gemini Tesoro" /></div>
-            <div class="product-content">
-              <span class="product-type">Espresso Blend · 1 kg</span>
-              <h3>Tesoro</h3>
-              <p>A vivid, energetic espresso blend with strong visual recall. Designed to stand out in digital advertising and on physical shelves.</p>
-              <ul>
-                <li>High-recognition packaging</li>
-                <li>Easy to feature in campaigns</li>
-                <li>Retail-friendly personality</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="product-card accent-purple">
-            <div class="product-image"><img src="assets/originale.webp" alt="Gemini Originale" /></div>
-            <div class="product-content">
-              <span class="product-type">Espresso Blend · 1 kg</span>
-              <h3>Originale</h3>
-              <p>A signature-style blend that reads bold, expressive, and brand-forward, suitable for campaigns centered on originality and strong taste identity.</p>
-              <ul>
-                <li>Distinctive premium packaging</li>
-                <li>Strong campaign narrative potential</li>
-                <li>Made for espresso ritual</li>
-              </ul>
-            </div>
-          </article>
+          <select id="sortSelect" class="select">
+            <option value="featured">Sort: Featured</option>
+            <option value="price-asc">Price: Low to high</option>
+            <option value="price-desc">Price: High to low</option>
+            <option value="name-asc">Name: A to Z</option>
+          </select>
         </div>
+
+        <div class="products" id="products"></div>
       </div>
     </section>
 
-    <section class="promo-banner">
-      <div class="container promo-grid">
-        <div>
-          <span class="eyebrow">Campaign Block</span>
+    <section class="section section--premium">
+      <div class="container premium-grid">
+        <article class="premium premium--wide reveal">
+          <img src="assets/quality-lab.jpg" alt="Gemini quality control" />
+          <div class="premium__body">
+            <div class="eyebrow">Roasting & control</div>
+            <h3>Every variety is roasted, checked, and tuned for the right taste profile.</h3>
+            <p>
+              Gemini evaluates quality and flavour to match each coffee with an appropriate roast approach. The result is not generic production, but a curated portfolio built around taste, consistency, and application.
+            </p>
+          </div>
+        </article>
+
+        <article class="premium reveal">
+          <img src="assets/gift-box.jpg" alt="Gemini gift box set" />
+          <div class="premium__body">
+            <div class="eyebrow">Gift-ready</div>
+            <h3>Premium presentation for corporate and personal gifting</h3>
+          </div>
+        </article>
+
+        <article class="premium reveal">
+          <img src="assets/shelf-display.jpg" alt="Gemini products displayed on a shelf" />
+          <div class="premium__body">
+            <div class="eyebrow">Retail presence</div>
+            <h3>Packaging designed to perform on shelf and on screen</h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section story" id="story">
+      <div class="container story__grid">
+        <div class="story__media reveal">
+          <img src="assets/living-room-peru.jpg" alt="Gemini Peru Organic with coffee in a living room" />
+        </div>
+        <div class="story__content reveal">
+          <div class="eyebrow">About the company</div>
           <h2>Coffee is our responsibility and our passion.</h2>
           <p>
-            Gemini is not simply a supplier of coffee beans. It is a production company, roasting partner,
-            equipment distributor, service team, and brand built around one belief: coffee should inspire action,
-            routine, business growth, and a better daily standard.
+            Gemini started as a small team of like-minded people and grew into a large producer of natural freshly roasted coffee and tea. The brand works according to Fair Trade principles, buying beans directly from farmers at a fair price.
           </p>
-        </div>
-        <div class="promo-quote">
-          <p>“Coffee is a ritual that inspires us.”</p>
+          <p>
+            Gemini roasts coffee at its own production facility in Kyiv region using modern Italian equipment, creates blends for different brewing methods, develops single-origin and specialty lines, serves both retail and business clients, and supports cafés, restaurants, offices, hotels, fuel stations, and retail networks.
+          </p>
+          <blockquote>“Coffee is the ritual that inspires us.”</blockquote>
         </div>
       </div>
     </section>
 
-    <section class="section story-section" id="story">
-      <div class="container story-grid">
-        <div class="story-copy">
-          <span class="eyebrow">About Gemini</span>
-          <h2>From a small team of believers to a major producer of freshly roasted coffee and tea.</h2>
-          <p>
-            Gemini grew from a compact team of like-minded people into a large-scale producer of natural freshly roasted coffee and tea.
-            Today, the brand develops blends for every brewing method, single-origin selections, specialty coffee, ready-to-drink beverages,
-            drip coffee, and a broad line of premium natural tea.
-          </p>
-          <p>
-            Gemini works according to Fair Trade principles by purchasing beans directly from farmers at an honest price. Once the coffee arrives
-            at production, the team roasts, cups, evaluates, and calibrates each lot to find the optimal roast profile for every variety.
-          </p>
-          <p>
-            The result is a brand with genuine industrial capability and strong product culture: roast, pack, blend, serve, train, install,
-            maintain, and help clients scale.
-          </p>
-        </div>
-
-        <div class="story-panel">
-          <div class="story-stat">
-            <strong>Silver Award</strong>
-            <span>Gemini received a silver award in 2020 in the loose tea category based on Ukrainian consumer preferences.</span>
-          </div>
-          <div class="story-stat">
-            <strong>Retail + Business</strong>
-            <span>Gemini serves both retail consumers and business clients across supermarkets, cafés, restaurants, offices, hotels, and service networks.</span>
-          </div>
-          <div class="story-stat">
-            <strong>International Ambition</strong>
-            <span>The team participates in international coffee festivals to show that Ukrainian coffee can compete with confidence on the world stage.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section advantages-section" id="advantages">
+    <section class="section experience" id="experience">
       <div class="container">
-        <div class="section-head center-head">
-          <span class="eyebrow">Why Gemini</span>
-          <h2>A complete coffee ecosystem, not just a coffee label.</h2>
-          <p>
-            This section is structured like a real commercial presentation: product quality, operational depth,
-            technical support, and clear reasons a retail or business client would trust the brand.
-          </p>
-        </div>
-
-        <div class="adv-grid">
-          <article class="adv-card">
-            <h3>Own roasting production</h3>
-            <p>Gemini roasts coffee in the Kyiv region using modern Italian equipment, allowing direct control over freshness, consistency, and roast profile.</p>
-          </article>
-          <article class="adv-card">
-            <h3>Wide assortment</h3>
-            <p>The portfolio covers blends for broad taste preferences, mono-origin coffees, specialty selections, tea, and ready-to-drink formats.</p>
-          </article>
-          <article class="adv-card">
-            <h3>Equipment expertise</h3>
-            <p>As an official distributor of world coffee equipment brands, Gemini tests machines personally before recommending them to clients.</p>
-          </article>
-          <article class="adv-card">
-            <h3>Barista education</h3>
-            <p>Gemini Barista Hub trains teams to work with coffee and equipment properly, helping cafés improve drink quality and service standards.</p>
-          </article>
-          <article class="adv-card">
-            <h3>Weekend service support</h3>
-            <p>Technical support and repairs help keep coffee machines operational even on weekends, minimizing downtime for hospitality businesses.</p>
-          </article>
-          <article class="adv-card">
-            <h3>Private Label</h3>
-            <p>Gemini can roast coffee under a client’s own trademark, which makes the brand relevant not only for retail but also for white-label opportunities.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section business-section" id="business">
-      <div class="container business-grid">
-        <div class="business-panel dark-panel">
-          <span class="eyebrow">For Business</span>
-          <h2>Built for supermarkets, cafés, petrol stations, hotels, offices, and chains.</h2>
-          <p>
-            Gemini already works with B2B clients such as gas stations, coffee shop networks, restaurants, car dealerships,
-            beauty salons, hotels, resorts, retail chains, neighborhood grocery stores, offices, and IT companies.
-          </p>
-          <p>
-            This makes the brand highly credible for commercial buyers looking for stable supply, technical competence,
-            and a partner that understands both product quality and service logistics.
-          </p>
-        </div>
-
-        <div class="business-list">
-          <article>
-            <h3>Retail-ready packaging</h3>
-            <p>Bold color-coded packs with immediate visual recognition, ideal for online sales, ad creatives, and physical shelf display.</p>
-          </article>
-          <article>
-            <h3>Scalable supply</h3>
-            <p>Operational capacity designed for steady retail demand and professional use in high-volume environments.</p>
-          </article>
-          <article>
-            <h3>Operational partnership</h3>
-            <p>Coffee, equipment, cups, training, maintenance, and support can be integrated into one supplier relationship.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section showcase-section">
-      <div class="container">
-        <div class="section-head split-head">
+        <div class="section__head reveal">
           <div>
-            <span class="eyebrow">Visual Advertising Blocks</span>
-            <h2>Prepared like real campaign sections for a commercial landing page.</h2>
+            <div class="eyebrow">Premium experience</div>
+            <h2>More than a store page</h2>
           </div>
           <p>
-            These tiles are intentionally styled as promotional modules: suitable for paid traffic landing pages,
-            online stores, catalog introductions, and brand storytelling pages.
+            This build uses your lifestyle images throughout the site so the brand feels aspirational, lived-in, and credible. The structure is ready for later backend, payment, and CMS integration.
           </p>
         </div>
 
-        <div class="showcase-grid">
-          <article class="showcase-card card-orange">
-            <div>
-              <span class="tag">Best for espresso bars</span>
-              <h3>Dense crema. Clear aroma. Fast recall.</h3>
-              <p>Position blends like Extra Crema and Platinum as the core choice for espresso-focused businesses and loyal dark-roast customers.</p>
-            </div>
+        <div class="experience-grid">
+          <article class="experience-card reveal">
+            <img src="assets/platinum-origin.jpg" alt="Platinum coffee outdoors" />
+            <h3>Origin storytelling</h3>
+            <p>Scene-driven imagery gives the products a stronger premium narrative and helps them feel collectible rather than generic.</p>
           </article>
-          <article class="showcase-card card-green">
-            <div>
-              <span class="tag">Single-origin story</span>
-              <h3>Bring origin, tasting notes, and visual distinction into the sale.</h3>
-              <p>Use Peru Organic to attract buyers who want more than a standard blend and appreciate product narrative.</p>
-            </div>
+
+          <article class="experience-card reveal">
+            <img src="assets/hands-peru.jpg" alt="Peru Organic held in hands" />
+            <h3>Human-scale desirability</h3>
+            <p>Hands and lifestyle context help buyers understand size, texture, and shelf presence immediately.</p>
           </article>
-          <article class="showcase-card card-dark">
-            <div>
-              <span class="tag">Brand confidence</span>
-              <h3>Not modest. Not generic. Built to stand out.</h3>
-              <p>Gemini openly communicates its strengths, scale, and ambition. That confidence translates well into digital commerce.</p>
-            </div>
+
+          <article class="experience-card reveal">
+            <img src="assets/happy-customer.jpg" alt="Happy customer holding Gemini Extra Crema" />
+            <h3>Emotional conversion</h3>
+            <p>Social proof visuals make the shopping flow feel warm, contemporary, and more believable.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container contact-box">
-        <div class="contact-copy">
-          <span class="eyebrow">Contact / CTA</span>
-          <h2>Bring Gemini coffee to your shelf, office, café, or customer base.</h2>
+    <section class="section bundle">
+      <div class="container bundle__grid">
+        <div class="bundle__content reveal">
+          <div class="eyebrow">Curated bundle</div>
+          <h2>Build a premium stock-up order in one click</h2>
           <p>
-            Use this landing page as a front-facing sales site, a catalog page, or a polished starting point for a full e-commerce build.
-            The structure is already prepared for real commercial presentation in VSCode.
+            Perfect for offices, frequent drinkers, and gifting. The button below adds a curated premium trio directly to the cart.
+          </p>
+          <ul>
+            <li>Peru Organic</li>
+            <li>Extra Crema</li>
+            <li>Platinum</li>
+          </ul>
+          <button class="btn btn--primary" id="bundleAdd">Add premium trio</button>
+        </div>
+        <div class="bundle__media reveal">
+          <img src="assets/sunset-peru.jpg" alt="Gemini Peru Organic at sunset" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section__head reveal">
+          <div>
+            <div class="eyebrow">Testimonials</div>
+            <h2>What this premium direction communicates</h2>
+          </div>
+          <p>
+            Replace these with real customer reviews later. The cards are rendered dynamically from JavaScript.
           </p>
         </div>
 
-        <form class="contact-form" id="contactForm">
-          <div class="field-row">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Your email" required />
-          </div>
-          <div class="field-row">
-            <input type="text" name="company" placeholder="Company / café / store" />
-            <input type="text" name="interest" placeholder="What are you interested in?" />
-          </div>
-          <textarea name="message" placeholder="Tell us what products or cooperation you need" required></textarea>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Send Request</button>
-            <span id="formMessage" class="form-message"></span>
-          </div>
+        <div id="reviewsGrid" class="reviews-grid"></div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container faq__grid">
+        <div class="faq__intro reveal">
+          <div class="eyebrow">FAQ</div>
+          <h2>Questions buyers usually ask</h2>
+          <p>
+            This section already includes interactive expand and collapse behavior.
+          </p>
+        </div>
+        <div id="faqList" class="faq-list reveal"></div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container cta__card reveal">
+        <div>
+          <div class="eyebrow">Stay in the loop</div>
+          <h2>Get launches, gift drops, and office coffee offers</h2>
+          <p>Newsletter UI is included and ready for later CRM or email platform integration.</p>
+        </div>
+        <form id="newsletterForm" class="cta__form">
+          <input id="newsletterEmail" type="email" placeholder="Enter your email" required />
+          <button class="btn btn--primary" type="submit">Subscribe</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <footer class="footer">
+    <div class="container footer__grid">
       <div>
-        <strong>Gemini Coffee</strong>
-        <p>Freshly roasted coffee, direct sourcing, espresso blends, single-origin selections, and B2B coffee solutions.</p>
+        <a class="brand brand--footer" href="#top">
+          <span class="brand__mark">G</span>
+          <span class="brand__text">
+            <strong>Gemini Coffee</strong>
+            <small>Retail and business coffee solutions</small>
+          </span>
+        </a>
+        <p class="footer__copy">
+          Roasting, packing, blends, specialty coffee, tea, equipment, service, barista training, and Private Label solutions.
+        </p>
       </div>
       <div>
-        <span>Landing page structure</span>
-        <p>HTML, CSS, JS · Ready for VSCode editing and further e-commerce expansion.</p>
+        <h4>Shop</h4>
+        <a href="#shop">All products</a>
+        <a href="#shop">Single origin</a>
+        <a href="#shop">Espresso blends</a>
       </div>
       <div>
-        <span>Next step</span>
-        <p>Add prices, real contact details, product SKUs, and order integration.</p>
+        <h4>Business</h4>
+        <a href="#">Private Label</a>
+        <a href="#">Equipment rental</a>
+        <a href="#">Barista Hub</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:hello@geminicoffee.com">hello@geminicoffee.com</a>
+        <a href="tel:+380000000000">+380 00 000 00 00</a>
+        <a href="#">Instagram</a>
+        <a href="#">Telegram</a>
       </div>
     </div>
   </footer>
+
+  <aside class="drawer" id="wishlistDrawer">
+    <div class="drawer__panel">
+      <div class="drawer__head">
+        <h3>Wishlist</h3>
+        <button class="round-btn" data-close="wishlistDrawer">✕</button>
+      </div>
+      <div class="drawer__body" id="wishlistItems"></div>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer__panel">
+      <div class="drawer__head">
+        <h3>Your cart</h3>
+        <button class="round-btn" data-close="cartDrawer">✕</button>
+      </div>
+      <div class="drawer__body" id="cartItems"></div>
+      <div class="drawer__footer">
+        <div class="summary-row"><span>Subtotal</span><strong id="subtotal">$0.00</strong></div>
+        <div class="summary-row"><span>Shipping</span><strong id="shipping">$0.00</strong></div>
+        <div class="summary-row summary-row--total"><span>Total</span><strong id="total">$0.00</strong></div>
+        <button class="btn btn--primary btn--full" id="checkoutOpen">Proceed to checkout</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal__card">
+      <div class="drawer__head">
+        <h3>Checkout</h3>
+        <button class="round-btn" id="checkoutClose">✕</button>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="checkout-grid">
+          <input type="text" name="name" placeholder="Full name" required />
+          <input type="email" name="email" placeholder="Email address" required />
+          <input type="tel" name="phone" placeholder="Phone number" required />
+          <input type="text" name="city" placeholder="City" required />
+          <input type="text" name="address" placeholder="Delivery address" required />
+          <select name="payment" required>
+            <option value="">Payment method</option>
+            <option>Card online</option>
+            <option>Cash on delivery</option>
+            <option>Bank transfer</option>
+          </select>
+        </div>
+        <textarea name="notes" rows="4" placeholder="Order notes"></textarea>
+        <button class="btn btn--primary btn--full">Place order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
 
   <script src="script.js"></script>
 </body>
